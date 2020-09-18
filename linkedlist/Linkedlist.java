@@ -48,7 +48,7 @@ public class Linkedlist{
             return list;
         }
 
-        //2nd case where the is somewhere other than head
+        //2nd case where the key is somewhere other than head
         while(currentNode != null && currentNode.data != key){
             prev = currentNode;
             currentNode = currentNode.next;
