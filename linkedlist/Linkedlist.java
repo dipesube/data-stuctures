@@ -58,4 +58,29 @@ public class Linkedlist{
 
         return list;
     }
+
+    public static void reverse(Linkedlist list){
+        Node currentNode = list.head;
+        Node prevNode = null;
+        Node next = null;
+
+        while (currentNode != null){
+            next = currentNode.next;
+            currentNode.next = prevNode;
+            prevNode = currentNode;
+            currentNode = next;
+        }
+
+        list.head = prevNode;
+
+    }
+
+    public static void main(String args[]){
+        Linkedlist list = new Linkedlist();
+        list = insert(list, 1);
+        list = insert(list, 2);
+        printList(list);
+        reverse(list);
+        printList(list);
+    }
 }
